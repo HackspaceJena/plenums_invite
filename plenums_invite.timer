@@ -1,0 +1,8 @@
+[Unit]
+Description=Monthly invite to Hackspace's Plenum
+
+[Timer]
+OnCalendar=Mon 15:00
+
+[Install]
+WantedBy=timers.target

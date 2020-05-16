@@ -1,0 +1,6 @@
+[Unit]
+Description=Send invitation to Hackspace's Plenum
+
+[Service]
+Type=oneshot
+ExecStart=/opt/plenums_invite/invite.sh
