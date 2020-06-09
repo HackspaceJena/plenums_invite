@@ -15,7 +15,7 @@ next_thursday_offset=$(( ( ( 7 - $day_of_week ) + 4 ) % 7 ))
 
 ## Check if next Thursday is the first of a month
 
-if (( $(date -d "+$next_thursday_offset days" +%d) > 7 )); then
+if (( $(date -d "+$next_thursday_offset days" +%_d) > 7 )); then
     echo "Invitation should be sent at most a week in advance."
     echo "Exiting without sending an inviation..."
     exit
