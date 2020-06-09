@@ -3,7 +3,7 @@
 ## Configuration
 
 from="office@krautspace.de"
-to="hackspace-jena@lstsrv.org"
+to=("hackspace-jena@lstsrv.org" "krautspace-announce@lstsrv.org")
 subject="Einladung zum Plenum"
 body_file=email_text # Use PROSEDATE for dd.mm.YYYY and URLDATE for YYYmmdd
 
@@ -26,4 +26,4 @@ fi
 prose_date=$(date -d "+$next_thursday_offset days" +%d.%m.%Y)
 url_date=$(date -d "+$next_thursday_offset days" +%Y%m%d)
 
-cat "$body_file" | sed -e "s/PROSEDATE/$prose_date/g" | sed -e "s/URLDATE/$url_date/g" | mail -s "$subject" -r "$from" "$to"
+cat "$body_file" | sed -e "s/PROSEDATE/$prose_date/g" | sed -e "s/URLDATE/$url_date/g" | mail -s "$subject" -r "$from" "${to[@]}"
