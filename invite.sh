@@ -21,7 +21,7 @@ if (( $(date -d "+$next_thursday_offset days" +%_d) > 7 )); then
     exit
 fi
 
-## Send inviation
+## Send invitation
 
 prose_date=$(date -d "+$next_thursday_offset days" +%d.%m.%Y)
 url_date=$(date -d "+$next_thursday_offset days" +%Y%m%d)
