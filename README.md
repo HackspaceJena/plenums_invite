@@ -27,7 +27,8 @@ Danach müssen die beiden systemd-Unit-Dateien nach `/etc/systemd/system`
 verlinkt werden:
 
 ```
-ln -s /opt/plenums_invite/plenums_invite.{service,timer} /etc/systemd/system/
+systemctl link /opt/plenums_invite/plenums_invite.service 
+systemctl link /opt/plenums_invite/plenums_invite.timer
 ```
 
 Schließlich muss die timer-Unit aktiviert werden:
