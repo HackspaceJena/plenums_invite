@@ -10,3 +10,28 @@ den Text als E-Mail.
 
 Die Service- und Timer-Dateien lassen systemd das Skript einmal wöchentlich
 ausführen.
+
+# Installation
+
+Dieses Repository muss nach `/opt` in das Verzeichnis `plenumsinvite` kopiert
+werden:
+
+```
+mkdir -p /opt
+cd /opt
+git clone https://github.com/HackspaceJena/plenums_invite.git
+cd /plenums_invite
+```
+
+Danach müssen die beiden systemd-Unit-Dateien nach `/etc/systemd/system`
+verlinkt werden:
+
+```
+ln -s /opt/plenums_invite/plenums_invite.{service,timer} /etc/systemd/system/
+```
+
+Schließlich muss die timer-Unit aktiviert werden:
+
+```
+systemctl enable plenums_invite.timer
+```
