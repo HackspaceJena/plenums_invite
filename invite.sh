@@ -26,4 +26,7 @@ fi
 prose_date=$(date -d "+$next_thursday_offset days" +%d.%m.%Y)
 url_date=$(date -d "+$next_thursday_offset days" +%Y%m%d)
 
-cat "$body_file" | sed -e "s/PROSEDATE/$prose_date/g" | sed -e "s/URLDATE/$url_date/g" | mail -s "$subject" -r "$from" "${to[@]}"
+script_path=$(readlink -f "$0")
+source_directory=$(dirname "$script_path")
+
+cat "$source_directory/$body_file" | sed -e "s/PROSEDATE/$prose_date/g" | sed -e "s/URLDATE/$url_date/g" | mail -s "$subject" -r "$from" "${to[@]}"
