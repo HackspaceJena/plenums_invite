@@ -32,7 +32,7 @@ sed -e "s/#DTSTART#/$(date_fmt +%Y%m%dT%H%M%SZ "TZ=\"Europe/Berlin\" 20:00")/" \
 	-e "s/#DTEND#/$(date_fmt +%Y%m%dT%H%M%SZ "TZ=\"Europe/Berlin\" 21:00")/" \
 	-e "s/#DTSTAMP#/$(date -u +%Y%m%dT%H%M%SZ)/" \
 	-e "s/#SUMMARY#/KrautSpace Plenum/" \
-	-e "s/#LOCATION#/${location}/" \
+	-e "s%#LOCATION#%${location}%" \
 	-e "s/#FROM#/${from}/g" \
 	-e "s/#REPLY_TO#/${replyto}/g" \
 	-e "s/#URLDATE#/${url_date}/g" \
