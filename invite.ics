@@ -18,9 +18,6 @@ DESCRIPTION:Wir treffen uns um 20 Uhr im virtuellen Raum unter:
  die Vorlage mit Anleitung findet Ihr hier: 
  \n\nhttps://vereinte.verwirrung.institute/p/ksplenum-template
 LOCATION:#LOCATION#
-ORGANIZER;CN=KrautSpace Jena;
- SENT-BY="MAILTO:#FROM#"
- :mailto:#REPLY_TO#
 SEQUENCE:0
 STATUS:CONFIRMED
 CLASS:PUBLIC

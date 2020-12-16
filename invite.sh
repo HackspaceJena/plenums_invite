@@ -6,7 +6,7 @@ from="office@krautspace.de"
 to=("hackspace-jena@lstsrv.org" "krautspace-announce@lstsrv.org")
 replyto="hackspace-jena@lstsrv.org"
 subject="Einladung zum Plenum"
-location_url="https://blue.kabi.tk/b/hac-nuf-fp4"
+location="https://blue.kabi.tk/b/hac-nuf-fp4"
 body_file=email_text # Use PROSEDATE for dd.mm.YYYY and URLDATE for YYYmmdd
 
 ## Find next Thursday
