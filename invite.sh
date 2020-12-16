@@ -28,15 +28,16 @@ url_date=$(date_fmt +%Y%m%d)
 script_path=$(readlink -f "$0")
 source_directory=$(dirname "$script_path")
 
-sed -e "s/#DTSTART#/$(date_fmt +%Y%m%dT%H%M%SZ "TZ=\"Europe/Berlin\" 20:00")/" \
+sed -E \
+	-e "s/#DTSTART#/$(date_fmt +%Y%m%dT%H%M%SZ "TZ=\"Europe/Berlin\" 20:00")/" \
 	-e "s/#DTEND#/$(date_fmt +%Y%m%dT%H%M%SZ "TZ=\"Europe/Berlin\" 21:00")/" \
 	-e "s/#DTSTAMP#/$(date -u +%Y%m%dT%H%M%SZ)/" \
 	-e "s/#SUMMARY#/KrautSpace Plenum/" \
 	-e "s%#LOCATION#%${location}%" \
 	-e "s/#FROM#/${from}/g" \
-	-e "s/#REPLY_TO#/${replyto}/g" \
 	-e "s/#URLDATE#/${url_date}/g" \
-	invite.ics > /tmp/invite.ics
+	-e 's/(^[^ ].{73}|.{73})/\1\r\n /g' \
+	"$source_directory/invite.ics" > /tmp/invite.ics
 
 sed -e "s/PROSEDATE/$prose_date/g" \
 	-e "s/URLDATE/$url_date/g" \
