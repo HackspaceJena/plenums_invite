@@ -10,7 +10,7 @@ DTSTAMP:#DTSTAMP#
 UID:#DTSTAMP#@kraut.space
 SUMMARY:#SUMMARY#
 DESCRIPTION:Wir treffen uns um 20 Uhr im virtuellen Raum unter:
- \n\nhttps://blue.kabi.tk/b/hac-nuf-fp4
+ \n\n#LOCATION#
  \n\nFür Vorbereitung und Protokoll gibt es wieder ein Pad, 
  bitte tragt schon mal Themen ein, die Ihr gern besprechen würdet:
  \n\nhttps://vereinte.verwirrung.institute/p/ksplenum-#URLDATE#
@@ -18,10 +18,12 @@ DESCRIPTION:Wir treffen uns um 20 Uhr im virtuellen Raum unter:
  die Vorlage mit Anleitung findet Ihr hier: 
  \n\nhttps://vereinte.verwirrung.institute/p/ksplenum-template
 LOCATION:#LOCATION#
+ORGANIZER;ROLE=CHAIR;PARTSTAT=ACCEPTED;RSVP=FALSE:mailto:#FROM#
+CONFERENCE;VALUE=URI:#LOCATION#
 SEQUENCE:0
 STATUS:CONFIRMED
 CLASS:PUBLIC
-CATEGORIES:MEETING
+CATEGORIES:Meeting
 TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR
