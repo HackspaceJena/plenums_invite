@@ -2,7 +2,11 @@
 Description=Monthly invite to Hackspace's Plenum
 
 [Timer]
-OnCalendar=Mon 15:00
+# Mondays on 1st to 4th (Thursday would be on 4th to 7th)
+OnCalendar=Mon *-*-01..04 15:00
+
+# Mondays that are on the 3 last days of the month (Thursday would be on 1st to 3rd)
+OnCalendar=Mon *-*~03 15:00
 
 [Install]
 WantedBy=timers.target
