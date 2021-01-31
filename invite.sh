@@ -41,7 +41,7 @@ sed -E \
 
 sed -e "s/PROSEDATE/$prose_date/g" \
 	-e "s/URLDATE/$url_date/g" \
-	"$source_directory/$body_file" | mail -s "$subject" -r "$from" -a /tmp/invite.ics "${to[@]}"
+	"$source_directory/$body_file" | mail -s "$subject" -r "$from" -A /tmp/invite.ics "${to[@]}"
 ret=$?
 rm -f /tmp/invite.ics
 exit $ret
