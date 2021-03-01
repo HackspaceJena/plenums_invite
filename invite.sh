@@ -2,9 +2,9 @@
 
 ## Configuration
 
-from="office@krautspace.de"
+export EMAIL="KrautSpace <office@krautspace.de>"
 to=("hackspace-jena@lstsrv.org" "krautspace-announce@lstsrv.org")
-replyto="hackspace-jena@lstsrv.org"
+export REPLYTO="hackspace-jena@lstsrv.org"
 subject="Einladung zum Plenum"
 location="https://blue.kabi.tk/b/hac-nuf-fp4"
 body_file=email_text # Use PROSEDATE for dd.mm.YYYY and URLDATE for YYYmmdd
@@ -34,14 +34,14 @@ sed -E \
 	-e "s/#DTSTAMP#/$(date -u +%Y%m%dT%H%M%SZ)/" \
 	-e "s/#SUMMARY#/KrautSpace Plenum/" \
 	-e "s%#LOCATION#%${location}%" \
-	-e "s/#FROM#/${from}/g" \
+	-e "s/#FROM#/${EMAIL}/g" \
 	-e "s/#URLDATE#/${url_date}/g" \
 	-e 's/(^[^ ].{73}|.{73})/\1\r\n /g' \
 	"$source_directory/invite.ics" > /tmp/invite.ics
 
 sed -e "s/PROSEDATE/$prose_date/g" \
 	-e "s/URLDATE/$url_date/g" \
-	"$source_directory/$body_file" | mail -s "$subject" -r "$from" -A /tmp/invite.ics "${to[@]}"
+	"$source_directory/$body_file" | mutt -n -s "$subject" -a /tmp/invite.ics -- "${to[@]}"
 ret=$?
 rm -f /tmp/invite.ics
 exit $ret
