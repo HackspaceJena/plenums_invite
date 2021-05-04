@@ -4,13 +4,13 @@
 
 from="office@krautspace.de"
 to=("hackspace-jena@lstsrv.org" "krautspace-announce@lstsrv.org")
-replyto="hackspace-jena@lstsrv.org"
+#replyto="hackspace-jena@lstsrv.org"
 subject="Einladung zum Plenum"
 location="https://talk.kabi.tk/krautspace"
 body_file=email_text # Use PROSEDATE for dd.mm.YYYY and URLDATE for YYYmmdd
 
 ## Find next Thursday
-date_fmt () { date -u -d "$2 next Thu" $1; }
+date_fmt () { date -u -d "$2 next Thu" "$1"; }
 
 ## Check if next Thursday is the first of a month
 
