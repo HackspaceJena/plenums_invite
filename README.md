@@ -1,3 +1,9 @@
+# ⚠️ Archived repository
+
+This repository was moved to / Dieses Repository befindet sich nun unter:
+
+🔗 https://git.kraut.space/Krautspace/plenums_invite
+
 # Einladung zum Plenum des Hackspace Jena e.V.
 
 Das Repository enthält Dateien zum automatischen Versenden von Einladungsmails
